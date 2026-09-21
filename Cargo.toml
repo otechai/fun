@@ -1,0 +1,19 @@
+[package]
+name = "fun"
+version = "1.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "funced/funcsave for any scripting language: edit, save, and run throwaway scripts from the shell"
+license-file = "LICENSE"
+repository = "https://github.com/otechai/fun"
+keywords = ["cli", "shell", "scripts", "fish", "funcsave"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
