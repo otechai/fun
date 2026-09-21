@@ -158,19 +158,6 @@ runs can't lose counts. A few things follow:
 names (`fun save <TAB>` offers only drafts), languages for `fun edit x <TAB>`, and `rm -f`.
 Names are read by the shell itself, so no process is spawned per `<TAB>`.
 
-## Coming from pf 3.0 or fun 1.0
-
-Scripts saved by `pf`/`fun 1.0` keep working, and fun still recognises their links as its
-own. They just aren't counted yet: open one with `fun edit <name>` and quit, and it's
-relinked. To move over from `pf`:
-
-```sh
-mv ~/.local/share/pf ~/.local/share/fun
-for f in ~/.local/share/fun/scripts/*; do ln -sf "$f" ~/.local/bin/"${f##*/}"; done
-cargo uninstall pf
-```
-
-(If you had set `$XDG_DATA_HOME`, the first path is `$XDG_DATA_HOME/pf`.)
 
 ## Design
 
